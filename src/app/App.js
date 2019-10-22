@@ -13,9 +13,9 @@ class App extends React.Component{
 
   letsPlayMusic = () => {
     const bg = new Audio(BackgroundMusic);
-    bg.volume = 0.10;
     bg.autoplay = true;
     bg.loop = true;
+    bg.volume = 0.10;
   }
 
   componentDidMount(){
