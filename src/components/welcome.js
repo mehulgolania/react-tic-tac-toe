@@ -1,5 +1,4 @@
 import React from 'react';
-import click from '../sound/click-1.mp3';
 import { useHistory }  from 'react-router-dom';
 
 import Auth from './auth';
@@ -7,10 +6,7 @@ import Auth from './auth';
 function WelcomeScreen() {
   let history = useHistory();
   
-  function getClickSound() {
-    const clickBtn = new Audio(click);
-    clickBtn.play();
-    
+  function Login() { 
     Auth.authenticate(() => {
       history.push("/game");
     });
@@ -22,7 +18,12 @@ function WelcomeScreen() {
         <div className="logo">X O</div>
         <h2>Welcome to the game</h2>
 
-        <button className="play-btn" onClick={getClickSound}>Let's Play</button>
+        <button 
+          className="play-btn" 
+          onClick={Login}
+        >
+          Let's Play
+        </button>
       </section>
     </>
   );

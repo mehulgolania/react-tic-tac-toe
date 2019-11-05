@@ -1,7 +1,5 @@
 import React from 'react';
 import Board from './board';
-import Sound1 from '../sound/click-1.mp3';
-// import Sound2 from '../sound/click-2.mp3';
 
 class Game extends React.Component{
   constructor(props){
@@ -27,10 +25,6 @@ class Game extends React.Component{
 
     const player = this.state.isPlayer ? player1 : player2;
     
-    const buttonSound = this.state.isPlayer ? Sound1 : Sound1;
-    const sound = new Audio(buttonSound);
-    sound.autoplay = true;
-
     const newButtonValue = this.state.boxValue;
     const currentIndex = event.target.getAttribute('dataindex');
 

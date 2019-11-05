@@ -20,7 +20,7 @@ class App extends React.Component{
 
   componentDidMount(){
     this.getRandonScheme()
-    this.letsPlayMusic();
+    //this.letsPlayMusic();
   }
 
   render(){
