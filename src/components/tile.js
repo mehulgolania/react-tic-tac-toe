@@ -1,15 +1,14 @@
 import React from 'react';
 
-class Tile extends React.Component{
-  render(){
-    return(
-      <button 
-        onClick={this.props.onClick}
-        dataindex={this.props.dataindex} 
-        className="tile"
-      /> 
-    );
-  }
+const Tile = props => {
+  return(
+    <button 
+      onClick={props.onClick}
+      className="button"
+    >
+      {props.value}
+    </button> 
+  );
 }
 
 export default Tile;

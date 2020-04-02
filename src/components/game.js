@@ -19,26 +19,36 @@ class Game extends React.Component{
     }
   }
 
-  handleClick = (event) => {
+  handleClick = (i) => {
     const player1 = this.state.player1;
     const player2 = this.state.player2;
 
-    const player = this.state.isPlayer ? player1 : player2;
-    
-    const newButtonValue = this.state.boxValue;
-    const currentIndex = event.target.getAttribute('dataindex');
+    console.log('Checking Click', i);
 
-    event.target.innerText = player;
-    event.target.disabled = true;    
-    newButtonValue[currentIndex] = player;
-    
+    //const player = this.state.isPlayer ? player1 : player2;
+
+    const boxValue = this.state.boxValue.slice();
+    boxValue[i] = 'X';
+    //console.log(boxValue);
     this.setState({
-      ...this.state,
-      isPlayer: this.state.isPlayer ? false : true,
-      boxValue: newButtonValue
+      boxValue: boxValue
     });
+    console.log(this.state.boxValue);
+    
+    //const newButtonValue = this.state.boxValue;
+    //const currentIndex = event.target.getAttribute('dataindex');
 
-    this.checkWinner()
+    //event.target.innerText = player;
+    //event.target.disabled = true;    
+    //newButtonValue[currentIndex] = player;
+    
+    // this.setState({
+    //   ...this.state,
+    //   isPlayer: this.state.isPlayer ? false : true,
+    //   //boxValue: newButtonValue
+    // });
+
+    //this.checkWinner()
   }
 
   checkWinner = () => {
@@ -70,17 +80,20 @@ class Game extends React.Component{
 
     return(
       <>
+        
+
         <div className="game-wrapper">
+          
           <div className="board-details">
-            { gameStatus ? <h1>"{winner} WON"</h1> : <h1>Player {player} turn</h1> }
+            {/* { gameStatus ? <h1>"{winner} WON"</h1> : <h1>Player {player} turn</h1> } */}
+            <button onClick={this.handleReset}>Reset</button>
           </div>
+
           <div className="board-wrapper">
             <Board 
               click={this.handleClick}
               tileValue={this.state.boxValue}
             />
-
-            {/* <button onClick={this.handleReset}>Reset</button> */}
           </div>
         </div>
       </>

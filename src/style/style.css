@@ -36,13 +36,13 @@ footer{bottom:0; color: #fff; text-align: center;padding:10px 0;letter-spacing: 
 .game-wrapper{display: flex;height:100%; align-items:center; flex-direction: row-reverse;}
 
 .board-wrapper,
-.board-details{flex-grow:1;padding:15px; display: flex;}
+.board-details{flex-grow:1;padding:15px; display: flex; flex: 1;}
 
 .board-wrapper{justify-content: flex-end;}
 .board-details{flex-direction: column;}
 
 .board{width:300px;overflow:hidden;}
-.tile{width:100px;height:100px;font-size:30px;vertical-align: top;outline: none; background: transparent; color: #fff; border: transparent;
+.button{width:100px;height:100px;font-size:30px;vertical-align: top;outline: none; background: transparent; color: #fff; border: transparent;
   border:2px solid #fff;
 }
 
